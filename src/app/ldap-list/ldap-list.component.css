@@ -1,3 +1,10 @@
 table{
   width: 90%;
 }
+.toolbar-filter {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: 12px;
+  width: 90%;
+}
