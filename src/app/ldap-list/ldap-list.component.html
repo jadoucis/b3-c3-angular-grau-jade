@@ -1,1 +1,44 @@
-<p>ldap-list works!</p>
+<div class="mat-elevation-z8">
+  <div class="toolbar-filter">&nbsp;&nbsp;
+    <mat-form-field style="width: 40%">
+      <mat-label>Nom complet</mat-label>
+      <input matInput (keyup)="applyFilter($event)"
+              placeholder="Entrez le début d'un nom" />
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <mat-slide-toggle [checked]="unactiveSelected"
+                      (change)="unactiveChanged($event)">
+      Utilisateur désactivé uniquement
+    </mat-slide-toggle>
+  </div>
+
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Colonne nom complet -->
+    <ng-container matColumnDef="nomComplet">
+      <th mat-header-cell *matHeaderCellDef> Nom complet </th>
+      <td mat-cell *matCellDef="let element"> {{element.nomComplet}} </td>
+    </ng-container>
+
+    <!-- Colonne mail -->
+    <ng-container matColumnDef="mail">
+      <th mat-header-cell *matHeaderCellDef> Mail </th>
+      <td mat-cell *matCellDef="let element"> {{element.mail}} </td>
+    </ng-container>
+
+    <!-- Colonne employeNumero -->
+    <ng-container matColumnDef="employeNumero">
+      <th mat-header-cell *matHeaderCellDef> Numero </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeNumero}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+          [pageSizeOptions]="[25, 50]"
+          showFirstLastButtons>
+
+  </mat-paginator>
+</div>
