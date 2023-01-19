@@ -12,7 +12,11 @@ export class UsersService {
   users: UserLdap[] = LDAP_USERS;
   constructor() { }
 
-  getUsers(login: string): Observable<UserLdap> {
-    return of(this.users.find(user => user.login === login));
+  getUsers(): Observable<UserLdap[]> {
+    return of(this.users);
   }
+
+  // getUsers(login: string): Observable<UserLdap> {
+  //   return of(this.users.find(user => user.login === login));
+  // }
 }
