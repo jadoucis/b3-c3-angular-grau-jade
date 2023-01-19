@@ -2,13 +2,15 @@
   <button mat-icon-button (click)="goToLdap()">
     <mat-icon aria-label="Accueil">arrow_back</mat-icon>
   </button>
-  Edition d'un utilisateur
+  {{ addForm ? "Ajout d'un utilisateur" : "  Edition d'un utilisateur" }}
 </h3>
 
 <section class="loading" *ngIf="processLoadRunning==true">
   <mat-spinner diameter="25" ></mat-spinner>
   <span>&nbsp; En cours de chargement ...</span>
 </section>
+
+<app-alert *ngIf="errorMessage.length>0" [type]="'danger'">{{ errorMessage }}</app-alert>
 
 <form class="user-form" *ngIf="processLoadRunning==false"
       [formGroup]="userForm" (ngSubmit)="onSubmitForm()"
@@ -58,9 +60,10 @@
     <tr>
       <td>
         <mat-form-field class="user-full-width">
-          <input type="password" matInput placeholder="Mot de passe"
+          <input type="password" matInput [placeholder]="passwordPlaceHolder"
                  id="password" formControlName="password"
-          />
+                 [errorStateMatcher]="confirmValidParentMatcher"
+          >
         </mat-form-field>
       </td>
       <td>
