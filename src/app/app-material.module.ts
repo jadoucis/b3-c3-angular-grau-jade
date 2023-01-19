@@ -14,6 +14,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInputModule} from "@angular/material/input";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   exports:[
@@ -29,7 +32,10 @@ import {MatInputModule} from "@angular/material/input";
     MatPaginatorModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ]
 })
 export class AppMaterialModule { }

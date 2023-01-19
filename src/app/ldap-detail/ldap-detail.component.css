@@ -1,0 +1,20 @@
+.loading {
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+
+.user-form {
+  min-width: 150px;
+  max-width: 750px;
+  width: 100%;
+}
+
+.user-full-width {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding-left: 12px;
+}

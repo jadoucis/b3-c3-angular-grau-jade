@@ -17,9 +17,7 @@ export class LdapListComponent implements OnInit{
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private usersService: UsersService, private router:Router) {
-
-  }
+  constructor(private usersService: UsersService, private router:Router) {}
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -54,6 +52,14 @@ export class LdapListComponent implements OnInit{
   unactiveChanged($event: MatSlideToggleChange): void {
     this.unactiveSelected = $event.checked;
     this.getUsers()
+  }
+
+  edit(login: string) {
+    this.router.navigate(['/user', login]).then( (e) => {
+      if (! e) {
+        console.log("Navigation has failed")
+      }
+    })
   }
 
 }
