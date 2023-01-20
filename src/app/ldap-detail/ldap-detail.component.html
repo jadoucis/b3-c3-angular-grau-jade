@@ -23,6 +23,7 @@
           id="nom" formControlName="nom" required
           (input)="updateLogin()"
           />
+          <mat-error>Le nom est requis</mat-error>
         </mat-form-field>
       </td>
       <td>
@@ -31,6 +32,7 @@
                  id="prenom" formControlName="prenom" required
                  (input)="updateLogin()"
           />
+          <mat-error>Le prénom est requis</mat-error>
         </mat-form-field>
       </td>
     </tr>
@@ -44,6 +46,7 @@
                  id="login" formControlName="login" required
                  (input)="updateMail()"
           />
+          <mat-error>Le login est requis</mat-error>
         </mat-form-field>
       </td>
       <td>
@@ -64,13 +67,16 @@
                  id="password" formControlName="password"
                  [errorStateMatcher]="confirmValidParentMatcher"
           >
+          <mat-error>Les mots de passes doivent être identiques</mat-error>
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="user-full-width">
-          <input type="password" matInput class="form-control" placeholder="Vérification du mot de passe"
+          <input type="password" matInput placeholder="Vérification du mot de passe"
                  id="confirmPassword" formControlName="confirmPassword"
+                 [errorStateMatcher]="confirmValidParentMatcher"
           />
+          <mat-error>Les mots de passes doivent être identiques</mat-error>
         </mat-form-field>
       </td>
     </tr>

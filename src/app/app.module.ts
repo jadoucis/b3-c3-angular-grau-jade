@@ -33,14 +33,6 @@ import { AlertComponent } from './share/alert/alert.component';
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

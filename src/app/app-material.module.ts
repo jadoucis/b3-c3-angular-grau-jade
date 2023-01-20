@@ -17,7 +17,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSelectModule} from "@angular/material/select";
-import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   exports:[
@@ -36,7 +37,10 @@ import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
     MatInputModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500,
