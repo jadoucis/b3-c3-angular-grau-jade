@@ -38,8 +38,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatTooltipModule,
     MatProgressSpinnerModule,
     MatSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatSnackBarModule,
   ],
   providers: [
