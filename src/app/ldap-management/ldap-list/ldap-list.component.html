@@ -38,7 +38,7 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        (click)="edit(row.login)"
+        (click)="edit(row.id)"
     ></tr>
   </table>
 

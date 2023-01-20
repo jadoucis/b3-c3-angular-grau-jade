@@ -1,4 +1,5 @@
 export interface UserLdap {
+  id: number; // for InMemoryUsersService
   login: string;
   nom: string;
   prenom: string;

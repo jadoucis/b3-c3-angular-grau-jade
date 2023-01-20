@@ -20,6 +20,9 @@ import { LdapAddComponent } from './ldap-management/ldap-add/ldap-add.component'
 import { AlertComponent } from './share/alert/alert.component';
 import { LdapManagementModule } from './ldap-management/ldap-management.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryUsersService} from "./service/in-memory-users.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     AppMaterialModule,
     LdapManagementModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryUsersService, {dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
