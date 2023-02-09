@@ -12,26 +12,29 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryUsersService} from "../service/in-memory-users.service";
+import {AppModule} from "../app.module";
+import {NavbarComponent} from "./navbar/navbar.component";
 
 
 @NgModule({
   declarations: [
+    NavbarComponent,
     LdapListComponent,
     LdapAddComponent,
     LdapEditComponent,
     AlertComponent
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppMaterialModule,
-    LdapManagementRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryUsersService, {dataEncapsulation: false}
-    )
-  ]
+    imports: [
+        CommonModule,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppMaterialModule,
+        LdapManagementRoutingModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryUsersService, {dataEncapsulation: false}
+        ),
+    ]
 })
 export class LdapManagementModule { }

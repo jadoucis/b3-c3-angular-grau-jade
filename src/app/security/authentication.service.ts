@@ -28,14 +28,14 @@ export class AuthenticationService {
     // return decoded.exp < Date.now() / 1000;
     // } catch (err) {
       // return false;
-    }
+    // }
 
     // test
     return false;
   }
 
-  static setToken(idToken: string) {
-    sessionStorage.setItem('id_token');
+  static setToken(token: string) {
+    sessionStorage.setItem('id_token', token);
   }
 
   static getToken() {
@@ -68,7 +68,7 @@ export class AuthenticationService {
     */
 
     // test
-    const response: AuthenticatorResponse
+    const response: AuthenticationResponse
         = {status: true, message: 'HTTP 200', token: 'atoken'};
     AuthenticationService.setToken('token');
     return of(response);
